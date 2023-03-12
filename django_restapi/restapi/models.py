@@ -15,8 +15,8 @@ class Board(models.Model):
     writer = models.CharField(max_length=50)
     view_count = models.IntegerField()
     link_url = models.CharField(max_length=200)
-    create_date = models.DateTimeField()
-    update_date = models.DateTimeField()
+    create_date = models.DateTimeField(auto_now_add=True)
+    update_date = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         managed = False
