@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'django_restapi.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'DATABASE',
+        'NAME': 'DATABASE명',
         'USER': '계정',
         'PASSWORD': '바말번호',
         'HOST': '127.0.0.1',
