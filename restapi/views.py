@@ -36,3 +36,17 @@ def board_create(request):
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['PUT'])
+def board_update(request):
+    params = request.data
+    data = Board.objects.filter(board_no=params['board_no']).first()
+    serializer = BoardSerializer(instance=data, data=params)
+
+    if serializer.is_valid():
+        serializer.save()
+
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
