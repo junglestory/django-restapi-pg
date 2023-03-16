@@ -50,3 +50,11 @@ def board_update(request):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['DELETE'])
+def board_delete(request, board_no):
+    data = Board.objects.get(board_no=board_no)
+    data.delete()
+
+    return Response(status=status.HTTP_204_NO_CONTENT)

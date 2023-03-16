@@ -7,4 +7,5 @@ urlpatterns = [
     path("board/<int:board_no>", board),
     path("board/create/", board_create),
     path("board/update/", board_update),
+    path("board/delete/<int:board_no>", board_delete),
 ]
