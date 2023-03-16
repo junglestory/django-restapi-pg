@@ -11,6 +11,22 @@ def hello(request):
     return Response("Hello World!")
 
 
+@api_view(['GET'])
+def board_list(request):
+    datas = Board.objects.all()
+    serializer = BoardSerializer(datas, many=True)
+
+    return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+@api_view(['GET'])
+def board(request, board_no):
+    datas = Board.objects.filter(board_no=board_no)
+    serializer = BoardSerializer(datas, many=True)
+
+    return Response(serializer.data, status=status.HTTP_200_OK)
+
+
 @api_view(['POST'])
 def board_create(request):
     serializer = BoardSerializer(data=request.data)
