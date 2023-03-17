@@ -1,12 +1,13 @@
 # django-restapi-pg
 
-## 사전 준비 사항
+This application is a Django Rest API with PostgreSQL.
 
-- [Python](https://www.python.org/downloads/) 3.6+ 설치
-- [VS Code](https://code.visualstudio.com/download) 설치
-- [Postman](https://www.postman.com/downloads/) 설치
-- [PostgreSQL](https://www.postgresql.org/download/) 설치
-- Board 테이블 생성
+## Requirements
+- [Python](https://www.python.org/downloads/) 3.6+
+- [VS Code](https://code.visualstudio.com/download)
+- [Postman](https://www.postman.com/downloads/)
+- [PostgreSQL](https://www.postgresql.org/download/)
+- Board Table
 
 ```sql
 CREATE SEQUENCE board_board_no_seq;
